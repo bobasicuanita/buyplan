@@ -1,0 +1,39 @@
+.dropdown-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.specs-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem;
+}
+
+.specs-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 200px;
+    list-style: none;
+}
+
+.specs-list-item {
+    color: black;
+    min-width: 300px;
+}
+
+.spec-key {
+    font-weight: 800;
+}
+
+h3 {
+    color: #5B86E5;
+    text-align: left;
+    padding-bottom: 1rem;
+}

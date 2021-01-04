@@ -1,0 +1,10 @@
+.table-width {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-weight: 500;
+    border: 0.3px solid #ddd;
+}

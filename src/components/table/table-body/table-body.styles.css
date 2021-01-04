@@ -1,0 +1,80 @@
+.table-data {
+    text-align: left;
+    width: 70px;
+    padding: 1rem 0 1rem 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #fff;
+    font-size: 12px;
+    cursor: default;
+}
+
+.product-name {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    bottom: 64px;
+    left: 0px;
+}
+
+.product-name:hover > .dropdown {
+    display: block;
+}
+
+.hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+label {
+    padding: 0.3rem 3rem;
+    border: 1px solid#66CD00;
+    background-color: #66CD00;
+    cursor: pointer;
+    font-size: 1.6rem;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: -3px 3px#458B00, -3px 3px #458B00, -1px 1px #458B00;
+    transition-duration: 0.2s;
+}
+
+input + label::before {
+    content: "\002B";
+}
+
+input:checked + label {
+    background-color: #36D1DC;
+    box-shadow: none;
+    border: 1px solid #36D1DC;
+}
+
+input:checked + label::before {
+    content: "\2713";
+    font-size: 1.4rem;
+}
+
+label:focus, label:active {
+    box-shadow: none;
+}
+
+.small-column {
+    width: 9%;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
