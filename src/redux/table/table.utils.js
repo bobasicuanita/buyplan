@@ -73,5 +73,3 @@ export const handleLuxuryTwoTotal = e => {
         }
     };
 };
-
-

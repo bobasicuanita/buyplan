@@ -10,6 +10,7 @@ const App = () => {
       <div className='container'>
         <h1>BuyPlan</h1>
         <Table />
+        <footer> <small>Designed and developed by Konstantinos Karasavvas <br></br>&copy; Copyright 2021 </small> </footer>
       </div>
     </div>
   );

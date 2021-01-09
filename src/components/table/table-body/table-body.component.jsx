@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { handleBasicTotal, handleAdvancedTotal, handlePremiumTotal, handlePremiumTwoTotal, handleLuxuryTotal, handleLuxuryTwoTotal } from '../../../redux/table/table.utils';
 
 import data from '../../../api/data';
@@ -10,6 +9,7 @@ import Dropdown from '../dropdown/dropdown.component';
 import './table-body.styles.css';
 
 const TableBody = ({ handleBasicClick, handleAdvancedClick, handlePremiumClick, handlePremiumTwoClick, handleLuxuryClick, handleLuxuryTwoClick, basicTotal, advancedTotal, premiumTotal, premiumTwoTotal, luxuryTotal, luxuryTwoTotal }) => {
+
     return (
         <tbody>
             {
@@ -23,12 +23,12 @@ const TableBody = ({ handleBasicClick, handleAdvancedClick, handlePremiumClick, 
                         </td>
                         <td className="table-data">{price}</td>
                         <td className="table-data">{type}</td>
-                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`1-${id}`} onClick={handleBasicClick} /><label htmlFor={`1-${id}`}></label></td>
-                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`2-${id}`} onClick={handleAdvancedClick} /><label htmlFor={`2-${id}`}></label></td>
-                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`3-${id}`} onClick={handlePremiumClick} /><label htmlFor={`3-${id}`}></label></td>
-                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`4-${id}`} onClick={handlePremiumTwoClick} /><label htmlFor={`4-${id}`}></label></td>
-                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`5-${id}`} onClick={handleLuxuryClick} /><label htmlFor={`5-${id}`}></label></td>
-                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`6-${id}`} onClick={handleLuxuryTwoClick} /><label htmlFor={`6-${id}`}></label></td>
+                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`1-${id}`} onClick={handleBasicClick} /><label className="select-one" htmlFor={`1-${id}`}></label></td>
+                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`2-${id}`} onClick={handleAdvancedClick} /><label className="select-one" htmlFor={`2-${id}`}></label></td>
+                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`3-${id}`} onClick={handlePremiumClick} /><label className="select-one" htmlFor={`3-${id}`}></label></td>
+                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`4-${id}`} onClick={handlePremiumTwoClick} /><label className="select-one" htmlFor={`4-${id}`}></label></td>
+                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`5-${id}`} onClick={handleLuxuryClick} /><label className="select-one" htmlFor={`5-${id}`}></label></td>
+                        <td className="table-data small-column"><input className="hidden" type="checkbox" id={`6-${id}`} onClick={handleLuxuryTwoClick} /><label className="select-one" htmlFor={`6-${id}`}></label></td>
                     </tr>)
                 })
             }
@@ -37,12 +37,12 @@ const TableBody = ({ handleBasicClick, handleAdvancedClick, handlePremiumClick, 
                 <td className='table-data'></td>
                 <td className='table-data'></td>
                 <td className='table-data'></td>
-                <td className='table-data'>{basicTotal} &euro;</td>
-                <td className='table-data'>{advancedTotal} &euro;</td>
-                <td className='table-data'>{premiumTotal} &euro;</td>
-                <td className='table-data'>{premiumTwoTotal} &euro;</td>
-                <td className='table-data'>{luxuryTotal} &euro;</td>
-                <td className='table-data'>{luxuryTwoTotal} &euro;</td>
+                <td className='table-data pulse-effect'>{basicTotal} &euro;</td>
+                <td className='table-data pulse-effect'>{advancedTotal} &euro;</td>
+                <td className='table-data pulse-effect'>{premiumTotal} &euro;</td>
+                <td className='table-data pulse-effect'>{premiumTwoTotal} &euro;</td>
+                <td className='table-data pulse-effect'>{luxuryTotal} &euro;</td>
+                <td className='table-data pulse-effect'>{luxuryTwoTotal} &euro;</td>
             </tr>
         </tbody>
     )
