@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './profiles.styles.css';
+import './profiles.styles.scss';
 
 const Profiles = () => {
     return (
-        <div className='box-container profiles-width'>profiles</div>
+        <div>profiles</div>
     )
 }
 

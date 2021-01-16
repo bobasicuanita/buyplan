@@ -1,0 +1,8 @@
+const DataActionTypes = {
+    GET_INITIAL_DATA: 'GET_INITIAL_DATA',
+    GET_DATA_PENDING: 'GET_DATA_PENDING',
+    GET_DATA_SUCCESS: 'GET_DATA_SUCCESS',
+    GET_DATA_FAILURE: 'GET_DATA_FAILURE'
+}
+
+export default DataActionTypes;

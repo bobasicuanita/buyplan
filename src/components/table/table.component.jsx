@@ -3,16 +3,16 @@ import React from 'react';
 import TableHead from './table-head/table-head.component';
 import TableBody from './table-body/table-body.component';
 
-import './table.styles.css';
+import './table.styles.scss';
 
 const Table = () => {
     return (
-        <div className='box-container table-width'>
+        <React.Fragment>
             <table className="table">
                 <TableHead />
                 <TableBody />
             </table>
-        </div>
+        </React.Fragment>
     )
 }
 

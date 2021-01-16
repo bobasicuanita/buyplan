@@ -1,0 +1,81 @@
+.table__table-data {
+    text-align: left;
+    width: 7rem;
+    padding: 1.6rem 0 1.6rem 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--white-color);
+    font-size: var(--table-font-size);
+    cursor: default;
+
+    &--product-name {
+        position: relative;
+        cursor: pointer;
+
+        &:hover > .dropdown {
+            display: block;
+        }
+    }
+
+    &--input-hidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+
+        & + .table__table-data--input-label::before {
+            content: "\002B";
+        }
+
+        &:checked + .table__table-data--input-label {
+            background-color: transparent;
+            border: 1px solid transparent;
+            transform: translateY(0);
+            box-shadow: 0 .5rem 2rem -.2rem transparent;
+            color: var(--table-checked-color);
+        }
+
+        &:checked + .table__table-data--input-label:before {
+            content: "\2713";
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-shadow: 0 0 .5rem var(--table-checked-color), 0 0 1rem var(--table-checked-color), 0 0 1.5rem var(--table-checked-color);
+        }
+    }
+
+    &--input-label {
+        padding: 1rem 3rem;
+        border: 1px solid var(--table-button-color);
+        background-color: var(--table-button-color);
+        cursor: pointer;
+        font-size: 1.6rem;
+        width: 87%;
+        transition-duration: .5s;
+        display: inline-block;
+        border-bottom: solid 5px var(--table-button-side-color);
+        box-shadow: 0 .2rem .2rem var(--table-button-shadow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:focus, &:active {
+            box-shadow: none;
+        }
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .7rem .2rem rgba(0, 0, 0, 0.29);
+        }
+    }
+
+    &--input {
+        width: 9%;
+    }
+
+    &--pulse-effect {
+        animation: pulse 2s infinite;
+    }
+}
