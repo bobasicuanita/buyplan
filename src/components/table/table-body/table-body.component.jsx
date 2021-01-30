@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import LaunchIcon from '@material-ui/icons/Launch';
 import {connect} from 'react-redux';
 
 import {asyncGetData} from '../../../redux/data/data.utils';
@@ -20,10 +21,6 @@ import {
     handleLuxuryTotal,
     handleLuxuryTwoTotal
 } from '../../../redux/table/table.utils';
-
-import Dropdown from '../dropdown/dropdown.component';
-
-import './table-body.styles.scss';
 
 const TableBody = ({
                        handleBasicClick,
@@ -50,52 +47,50 @@ const TableBody = ({
 
     return (
         <tbody>
-        {!pending && data.data.length ? data.data.map(({id, name, price, type, ...otherProps}) => {
-            return (<tr key={id} data-key={id} className="table__table-row">
-                <td className="table__table-data table__table-data--product-name">
-                    {name}
-                    <Dropdown key={id} name={name} {...otherProps} />
+        {!pending && data.data.length ? data.data.map(({id, name, price, type}) => {
+            return (<tr key={id} data-key={id} className="table__row">
+                <td className="table__data table__data--product-name">
+                    <a href={`#${id}`} className="table__data-link">{name}</a>
+                    <a href={`#${id}`} className="table__data-btn"><LaunchIcon/></a>
                 </td>
-                <td className="table__table-data">{price}</td>
-                <td className="table__table-data">{type}</td>
-                <td className="table__table-data table__table-data--input"><input
-                    className="table__table-data--input-hidden" type="checkbox" id={`1-${id}`}
-                    onClick={handleBasicClick}/><label className="table__table-data--input-label"
+                <td className="table__data">{price}</td>
+                <td className="table__data">{type}</td>
+                <td className="table__data table__data--input"><input
+                    className="table__data--input-hidden" type="checkbox" id={`1-${id}`}
+                    onClick={handleBasicClick}/><label className="table__data--input-label"
                                                        htmlFor={`1-${id}`}>&nbsp;</label></td>
-                <td className="table__table-data table__table-data--input"><input
-                    className="table__table-data--input-hidden" type="checkbox" id={`2-${id}`}
-                    onClick={handleAdvancedClick}/><label className="table__table-data--input-label"
+                <td className="table__data table__data--input"><input
+                    className="table__data--input-hidden" type="checkbox" id={`2-${id}`}
+                    onClick={handleAdvancedClick}/><label className="table__data--input-label"
                                                           htmlFor={`2-${id}`}>&nbsp;</label></td>
-                <td className="table__table-data table__table-data--input"><input
-                    className="table__table-data--input-hidden" type="checkbox" id={`3-${id}`}
-                    onClick={handlePremiumClick}/><label className="table__table-data--input-label"
+                <td className="table__data table__data--input"><input
+                    className="table__data--input-hidden" type="checkbox" id={`3-${id}`}
+                    onClick={handlePremiumClick}/><label className="table__data--input-label"
                                                          htmlFor={`3-${id}`}>&nbsp;</label></td>
-                <td className="table__table-data table__table-data--input"><input
-                    className="table__table-data--input-hidden" type="checkbox" id={`4-${id}`}
-                    onClick={handlePremiumTwoClick}/><label className="table__table-data--input-label"
+                <td className="table__data table__data--input"><input
+                    className="table__data--input-hidden" type="checkbox" id={`4-${id}`}
+                    onClick={handlePremiumTwoClick}/><label className="table__data--input-label"
                                                             htmlFor={`4-${id}`}>&nbsp;</label></td>
-                <td className="table__table-data table__table-data--input"><input
-                    className="table__table-data--input-hidden" type="checkbox" id={`5-${id}`}
-                    onClick={handleLuxuryClick}/><label className="table__table-data--input-label"
+                <td className="table__data table__data--input"><input
+                    className="table__data--input-hidden" type="checkbox" id={`5-${id}`}
+                    onClick={handleLuxuryClick}/><label className="table__data--input-label"
                                                         htmlFor={`5-${id}`}>&nbsp;</label></td>
-                <td className="table__table-data table__table-data--input"><input
-                    className="table__table-data--input-hidden" type="checkbox" id={`6-${id}`}
-                    onClick={handleLuxuryTwoClick}/><label className="table__table-data--input-label"
+                <td className="table__data table__data--input"><input
+                    className="table__data--input-hidden" type="checkbox" id={`6-${id}`}
+                    onClick={handleLuxuryTwoClick}/><label className="table__data--input-label"
                                                            htmlFor={`6-${id}`}>&nbsp;</label></td>
             </tr>)
-        }) : (<tr>
-            <td>Loading...</td>
-        </tr>)}
-        <tr className="table__table-row">
-            <td className='table__table-data'>&nbsp;</td>
-            <td className='table__table-data'>&nbsp;</td>
-            <td className='table__table-data'>&nbsp;</td>
-            <td className='table__table-data table__table-data--pulse-effect'>{basicTotal} &euro;</td>
-            <td className='table__table-data table__table-data--pulse-effect'>{advancedTotal} &euro;</td>
-            <td className='table__table-data table__table-data--pulse-effect'>{premiumTotal} &euro;</td>
-            <td className='table__table-data table__table-data--pulse-effect'>{premiumTwoTotal} &euro;</td>
-            <td className='table__table-data table__table-data--pulse-effect'>{luxuryTotal} &euro;</td>
-            <td className='table__table-data table__table-data--pulse-effect'>{luxuryTwoTotal} &euro;</td>
+        }) : (<tr><td>Loading...</td></tr>)}
+        <tr className="table__row table__data--total">
+            <td className='table__data '>&nbsp;</td>
+            <td className='table__data'>&nbsp;</td>
+            <td className='table__data'>&nbsp;</td>
+            <td className='table__data'>{basicTotal} &euro;</td>
+            <td className='table__data'>{advancedTotal} &euro;</td>
+            <td className='table__data'>{premiumTotal} &euro;</td>
+            <td className='table__data'>{premiumTwoTotal} &euro;</td>
+            <td className='table__data'>{luxuryTotal} &euro;</td>
+            <td className='table__data'>{luxuryTwoTotal} &euro;</td>
         </tr>
         </tbody>
     )

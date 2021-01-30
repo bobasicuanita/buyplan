@@ -1,0 +1,27 @@
+.total-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--white-color);
+  box-shadow: 1px 1px 30px var(--dropdown-shadow-color);
+  display: none;
+
+
+  &__table-head {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+  }
+
+  &__head-column--star {
+    display: flex;
+  }
+
+  &__table {
+    width: 100%;
+  }
+
+  @include responsive(phone) {
+    display: block;
+  }
+}

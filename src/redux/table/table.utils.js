@@ -1,12 +1,10 @@
 import { handleBasicIncrement, handleAdvancedIncrement, handlePremiumIncrement, handlePremiumTwoIncrement, handleLuxuryIncrement, handleLuxuryTwoIncrement, handleBasicDecrement, handleAdvancedDecrement, handlePremiumDecrement, handlePremiumTwoDecrement, handleLuxuryDecrement, handleLuxuryTwoDecrement } from '../../redux/table/table.actions';
 
-
 export const handleBasicTotal = e => {
     return dispatch => {
         const getPrice = parseInt(e.target.parentElement.parentElement.children[1].innerText.split(' ')[0]);
 
         if (e.target.checked) {
-
             dispatch(handleBasicIncrement(getPrice));
         } else {
             dispatch(handleBasicDecrement(getPrice));

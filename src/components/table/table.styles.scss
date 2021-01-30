@@ -1,14 +1,20 @@
 @import "table-head/table-head.styles";
 @import "table-body/table-body.styles";
-@import "dropdown/dropdown.styles";
 
 .table {
-    width: 100%;
-    border: 0.3px solid #ddd;
-    border-collapse: collapse;
-    font-weight: 500;
+  @include responsive(phone) {
+    display: block;
+  }
 
-    &__table-row:hover {
-        background-color: var(--table-hover-color);
+  @include responsive(phone) {
+    border: none;
+  }
+
+  &__row:hover {
+    background-color: var(--table-hover-color);
+
+    @include responsive(phone) {
+      background-color: var(--primary-color);
     }
+  }
 }

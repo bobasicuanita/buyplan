@@ -5,7 +5,12 @@ export const asyncGetData = () => {
         try {
             dispatch(getDataPending());
 
-            const response = await fetch('/api/data.json', {headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
+            const response = await fetch('/api/data.json', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
 
             const dbData = await response.json();
 
@@ -16,6 +21,4 @@ export const asyncGetData = () => {
             dispatch(getDataFailure(err));
         }
     }
-
-
 }

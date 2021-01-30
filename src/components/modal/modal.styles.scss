@@ -1,0 +1,114 @@
+.modal {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__box {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__box {
+    background-color: var(--white-color);
+    border-radius: 5px;
+    padding: 3rem;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.1);
+    transition: all .4s .2s;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  &__close:link,
+  &__close:visited {
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    transition: all .2s;
+  }
+
+  &__close:hover {
+    color: var(--primary-color);
+  }
+
+  &__image {
+
+  }
+
+  &__content-details {
+    padding: 2rem;
+    max-width: 40rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 2rem;
+  }
+
+  &__content-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    background-color: var(--primary-color);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 1rem 1rem 1rem 2rem;
+    width: 43rem;
+    color: var(--white-color);
+  }
+
+  &__specs-list-item {
+    padding: .5rem 0;
+    flex: 0 0 48%;
+    font-size: var(--table-font-size);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  &__specs-list-item:nth-child(even) {
+    margin-left: 1rem;
+  }
+
+  &__specs-list-item-key {
+    font-size: var(--table-font-size);
+    line-height: 1.1;
+  }
+
+  &__title-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 10rem;
+  }
+}

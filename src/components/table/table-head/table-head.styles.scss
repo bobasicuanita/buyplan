@@ -1,10 +1,22 @@
-.table__table-head {
+.table__head-column {
     width: 7rem;
+    font-weight: 500;
     background-color: var(--table-head-color);
     color: var(--white-color);
-    font-weight: 500;
-    font-size: var(--table-font-size);
-    letter-spacing: 0.5px;
-    text-align: left;
-    padding: 1.5rem 0 1.5rem 1rem;
+
+    @include responsive(phone) {
+        display: block;
+    }
+}
+
+@include responsive(phone) {
+    .table__head {
+        display: block;
+
+        & .table__row {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+    }
 }

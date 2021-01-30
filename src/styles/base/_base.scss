@@ -6,13 +6,26 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px
+
+  @include responsive(tab-land) { // width < 1200?
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include responsive(tab-port) { // width < 900?
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include responsive(big-desktop) { // width > 1800?
+    font-size: 75%; // 1rem = 12px, 12/16 = 75%
+  }
 }
 
 body {
   box-sizing: border-box;
   font-family: var(--default-font-family);
   background-color:var(--primary-color);
+  position: relative;
 }
 
 .page-wrapper {
@@ -25,7 +38,37 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 100%;
+
+    @include responsive(phone) {
+      align-items: center;
+    }
   }
+
+
+  @include responsive(phone){
+    margin-top: 5rem;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border: 0.3px solid #ddd;
+  font-weight: 500;
+}
+
+th {
+  text-align: left;
+  padding: 1.5rem 0 1.5rem 1rem;
+  font-size: var(--table-font-size);
+  letter-spacing: 0.5px;
+}
+
+td {
+  text-align: left;
+  padding: 1.6rem 0 1.6rem 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: var(--table-font-size);
+  cursor: default;
 }
