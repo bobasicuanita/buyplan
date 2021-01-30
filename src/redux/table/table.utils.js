@@ -1,8 +1,9 @@
-import { handleBasicIncrement, handleAdvancedIncrement, handlePremiumIncrement, handlePremiumTwoIncrement, handleLuxuryIncrement, handleLuxuryTwoIncrement, handleBasicDecrement, handleAdvancedDecrement, handlePremiumDecrement, handlePremiumTwoDecrement, handleLuxuryDecrement, handleLuxuryTwoDecrement } from '../../redux/table/table.actions';
+import { handleBasicIncrement, handleAdvancedIncrement, handlePremiumIncrement, handlePremiumTwoIncrement, handleLuxuryIncrement, handleLuxuryTwoIncrement, handleBasicDecrement, handleAdvancedDecrement, handlePremiumDecrement, handlePremiumTwoDecrement, handleLuxuryDecrement, handleLuxuryTwoDecrement } from './table.actions';
 
 export const handleBasicTotal = e => {
-    return dispatch => {
-        const getPrice = parseInt(e.target.parentElement.parentElement.children[1].innerText.split(' ')[0]);
+    return (dispatch, getState) => {
+
+        const getPrice = getState().data.data.find(el => el.id == e.target.dataset.id).price;
 
         if (e.target.checked) {
             dispatch(handleBasicIncrement(getPrice));
@@ -13,8 +14,8 @@ export const handleBasicTotal = e => {
 };
 
 export const handleAdvancedTotal = e => {
-    return dispatch => {
-        const getPrice = parseInt(e.target.parentElement.parentElement.children[1].innerText.split(' ')[0]);
+    return (dispatch, getState) => {
+        const getPrice = getState().data.data.find(el => el.id == e.target.dataset.id).price;
 
         if (e.target.checked) {
             dispatch(handleAdvancedIncrement(getPrice));
@@ -25,8 +26,8 @@ export const handleAdvancedTotal = e => {
 };
 
 export const handlePremiumTotal = e => {
-    return dispatch => {
-        const getPrice = parseInt(e.target.parentElement.parentElement.children[1].innerText.split(' ')[0]);
+    return (dispatch, getState) => {
+        const getPrice = getState().data.data.find(el => el.id == e.target.dataset.id).price;
 
         if (e.target.checked) {
             dispatch(handlePremiumIncrement(getPrice));
@@ -37,8 +38,8 @@ export const handlePremiumTotal = e => {
 };
 
 export const handlePremiumTwoTotal = e => {
-    return dispatch => {
-        const getPrice = parseInt(e.target.parentElement.parentElement.children[1].innerText.split(' ')[0]);
+    return (dispatch, getState) => {
+        const getPrice = getState().data.data.find(el => el.id == e.target.dataset.id).price;
 
         if (e.target.checked) {
             dispatch(handlePremiumTwoIncrement(getPrice));
@@ -49,8 +50,8 @@ export const handlePremiumTwoTotal = e => {
 };
 
 export const handleLuxuryTotal = e => {
-    return dispatch => {
-        const getPrice = parseInt(e.target.parentElement.parentElement.children[1].innerText.split(' ')[0]);
+    return (dispatch, getState) => {
+        const getPrice = getState().data.data.find(el => el.id == e.target.dataset.id).price;
 
         if (e.target.checked) {
             dispatch(handleLuxuryIncrement(getPrice));
@@ -61,8 +62,8 @@ export const handleLuxuryTotal = e => {
 };
 
 export const handleLuxuryTwoTotal = e => {
-    return dispatch => {
-        const getPrice = parseInt(e.target.parentElement.parentElement.children[1].innerText.split(' ')[0]);
+    return (dispatch, getState) => {
+        const getPrice = getState().data.data.find(el => el.id == e.target.dataset.id).price;
 
         if (e.target.checked) {
             dispatch(handleLuxuryTwoIncrement(getPrice));

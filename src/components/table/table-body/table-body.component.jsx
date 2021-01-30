@@ -55,27 +55,27 @@ const TableBody = ({
                 </td>
                 <td className="table__data">{price}</td>
                 <td className="table__data">{type}</td>
-                <td className="table__data table__data--input"><input
+                <td className="table__data table__data--input"><input data-id={id}
                     className="table__data--input-hidden" type="checkbox" id={`1-${id}`}
                     onClick={handleBasicClick}/><label className="table__data--input-label"
                                                        htmlFor={`1-${id}`}>&nbsp;</label></td>
-                <td className="table__data table__data--input"><input
+                <td className="table__data table__data--input"><input data-id={id}
                     className="table__data--input-hidden" type="checkbox" id={`2-${id}`}
                     onClick={handleAdvancedClick}/><label className="table__data--input-label"
                                                           htmlFor={`2-${id}`}>&nbsp;</label></td>
-                <td className="table__data table__data--input"><input
+                <td className="table__data table__data--input"><input data-id={id}
                     className="table__data--input-hidden" type="checkbox" id={`3-${id}`}
                     onClick={handlePremiumClick}/><label className="table__data--input-label"
                                                          htmlFor={`3-${id}`}>&nbsp;</label></td>
-                <td className="table__data table__data--input"><input
+                <td className="table__data table__data--input"><input data-id={id}
                     className="table__data--input-hidden" type="checkbox" id={`4-${id}`}
                     onClick={handlePremiumTwoClick}/><label className="table__data--input-label"
                                                             htmlFor={`4-${id}`}>&nbsp;</label></td>
-                <td className="table__data table__data--input"><input
+                <td className="table__data table__data--input"><input data-id={id}
                     className="table__data--input-hidden" type="checkbox" id={`5-${id}`}
                     onClick={handleLuxuryClick}/><label className="table__data--input-label"
                                                         htmlFor={`5-${id}`}>&nbsp;</label></td>
-                <td className="table__data table__data--input"><input
+                <td className="table__data table__data--input"><input data-id={id}
                     className="table__data--input-hidden" type="checkbox" id={`6-${id}`}
                     onClick={handleLuxuryTwoClick}/><label className="table__data--input-label"
                                                            htmlFor={`6-${id}`}>&nbsp;</label></td>
